@@ -10,3 +10,4 @@
 - **15:55 UTC** — Removed the “Rollover test” section and its `RolloverSwatch` data.
 - **16:10 UTC** — Headshot easter egg: googly eyes appear on hover (CSS); pupils follow the cursor within each eye via a small rAF-throttled script active only while hovering; `prefers-reduced-motion` disables it; `will-change` on pupils only during tracking.
 - **16:45 UTC** — Contact: `grid grid-cols-2` (half-width cells), labels only (no URL line); `linkButtonContact` variant; fixed stray comma in `nowLinks` array.
+- **17:05 UTC** — Replaced `public/favicon.svg` with a symmetric black “T” on cream `#fffef2` (vector paths, no font dependency). `favicon.ico` unchanged — regenerate locally if you need a matching `.ico`.
