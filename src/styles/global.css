@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Faculty Glyphic is the Google Fonts family name for “Faculty” on fonts.google.com */
+@theme {
+	--font-heading: "Faculty Glyphic", ui-serif, Georgia, serif;
+	--font-body: "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Googly eyes: own compositor layer for pupils only while the pointer is over the headshot. */
+#headshot-easter.is-tracking [data-googly-pupil] {
+	will-change: transform;
+}
