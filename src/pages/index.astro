@@ -185,7 +185,12 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 						{
 							nowLinks.map((item) => (
 								<li>
-									<a href={item.href} class={linkButtonNow}>
+									<a
+										href={item.href}
+										class={linkButtonNow}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
 										{item.label}
 										<span class="mt-1 block text-sm font-normal opacity-80">{item.href}</span>
 										{item.explainer && (
@@ -214,7 +219,12 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 						{
 							previousLinks.map((item) => (
 								<li>
-									<a href={item.href} class={linkButtonCream}>
+									<a
+										href={item.href}
+										class={linkButtonCream}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
 										{item.label}
 										<span class="mt-1 block text-sm font-normal opacity-80">{item.href}</span>
 										{item.explainer && (
@@ -243,7 +253,12 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 						{
 							contactLinks.map((item) => (
 								<li class="min-w-0">
-									<a href={item.href} class={linkButtonContact}>
+									<a
+										href={item.href}
+										class={linkButtonContact}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
 										{item.label}
 									</a>
 								</li>
