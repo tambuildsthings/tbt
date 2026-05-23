@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-05-23
+
+- **Homepage intro** — Refreshed the header about copy: listed product types instead of solo/team wording; “other humans” → “other people”; “driver” → “robot driver” in the AI enablement line.
+
 ## 2026-04-06
 
 - **11:45 UTC** — Created project at `Documents/github/tbt` with Astro and Tailwind; set agent workspace root to this folder; added landing page (“Tam Builds Things”) with black uppercase text on a neon pink background.
