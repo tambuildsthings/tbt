@@ -3,6 +3,7 @@
 ## 2026-05-23
 
 - **Homepage intro** — Refreshed the header about copy: listed product types instead of solo/team wording; “other humans” → “other people”; “driver” → “robot driver” in the AI enablement line.
+- **`SiteLink.stage`** — Optional stage line on every link row; rendered under explainer (Now / Previously) or under label with optional explainer support (Contact). Funding / phase wording moved from some explainers into `stage` to avoid duplication.
 
 ## 2026-04-06
 

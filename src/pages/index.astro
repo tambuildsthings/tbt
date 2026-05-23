@@ -1,67 +1,80 @@
 ---
 import "../styles/global.css";
 
-/** Row in Now / Previously / Contact: title, URL line, optional explainer copy. */
+/** Row in Now / Previously / Contact: title, URL line, optional explainer, optional stage line (shown under explainer). */
 interface SiteLink {
 	href: string;
 	label: string;
 	explainer?: string;
+	stage?: string;
 }
 
 const nowLinks: SiteLink[] = [
-	{ href: "https://productjobsanywhere.com/", 
-	label: "Solo - Product Jobs Anywhere", 
-	explainer: "Making it easier for Product Managers, Designers, and Engineers to find fully remote jobs"},
-	
+	{
+		href: "https://productjobsanywhere.com/",
+		label: "Solo - Product Jobs Anywhere",
+		explainer:
+			"Making it easier for Product Managers, Designers, and Engineers to find fully remote jobs",
+		stage: "Bootstrapped, profitable",
+	},
+
 	{
 		href: "https://tamfinlay.com/",
 		label: "Solo - Coach for Product Managers",
 		explainer: "Expert coaching for Product Managers",
+		stage: "Bootstrapped, profitable",
 	},
-	
+
 	{
 		href: "https://xmp.world/",
 		label: "Product Manager - XMP",
-		explainer: "Ops platform for scaling telecoms and construction businesses. Seed stage",
+		explainer: "Ops platform for scaling telecoms and construction businesses",
+		stage: "Seed",
 	},
 ];
 
 const previousLinks: SiteLink[] = [
-
 	{
 		href: "https://remote.com/",
 		label: "Staff Product Manager - Remote",
-		explainer: "Making hiring easy and compliant, globally. Series A -> Series C",
+		explainer: "Making global hiring and payroll easy and compliant",
+		stage: "Series A → Series C",
 	},
 	{
 		href: "https://farewill.com/make-a-will-online",
 		label: "Group Product Manager - Farewill",
-		explainer: "Changing the way the world deals with death. Seed -> Series B",
+		explainer: "Changing the way the world deals with death",
+		stage: "Seed → Series B",
 	},
 
 	{
 		href: "https://www.kindeo.com/",
 		label: "Product Lead - Kindeo",
-		explainer: "Video autobiographies for everyone. Seed stage",
+		explainer: "Video autobiographies for everyone",
+		stage: "Seed → Pivot",
 	},
 
 	{
 		href: "https://www.secretsales.com/",
 		label: "Product Mananger - Secret Sales",
-		explainer: "Selling fashion, fast. Series A -> Series B",
+		explainer: "Selling fashion, fast",
+		stage: "Series A → Series B",
 	},
-	
-	];
+];
 
 const contactLinks: SiteLink[] = [
 	{
 		href: "mailto:tambuildsthings@gmail.com?subject=wownicesitebro",
 		label: "Email",
+		stage: "Best for longer messages",
 	},
-	{ href: "https://www.linkedin.com/in/tam-finlay/", label: "LinkedIn" },
-	{ href: "https://x.com/tambuildsthings", label: "Twitter" },
-	{ href: "https://github.com/tambuildsthings", label: "GitHub" },
-	
+	{
+		href: "https://www.linkedin.com/in/tam-finlay/",
+		label: "LinkedIn",
+		stage: "Professional profile",
+	},
+	{ href: "https://x.com/tambuildsthings", label: "Twitter", stage: "Short updates" },
+	{ href: "https://github.com/tambuildsthings", label: "GitHub", stage: "Code and projects" },
 ];
 
 /** Motion, border, shadow, focus — hover fill added per variant. */
@@ -198,6 +211,16 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 												{item.explainer}
 											</span>
 										)}
+										{item.stage && (
+											<span
+												class:list={[
+													"block text-sm font-normal leading-snug text-black/70",
+													item.explainer ? "mt-1" : "mt-2",
+												]}
+											>
+												{item.stage}
+											</span>
+										)}
 									</a>
 								</li>
 							))
@@ -232,6 +255,16 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 												{item.explainer}
 											</span>
 										)}
+										{item.stage && (
+											<span
+												class:list={[
+													"block text-sm font-normal leading-snug text-black/70",
+													item.explainer ? "mt-1" : "mt-2",
+												]}
+											>
+												{item.stage}
+											</span>
+										)}
 									</a>
 								</li>
 							))
@@ -255,11 +288,21 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 								<li class="min-w-0">
 									<a
 										href={item.href}
-										class={linkButtonContact}
+										class={`${linkButtonContact} flex-col gap-1 py-3`}
 										target="_blank"
 										rel="noopener noreferrer"
 									>
 										{item.label}
+										{item.explainer && (
+											<span class="block max-w-full px-1 text-xs font-normal leading-snug text-black/70">
+												{item.explainer}
+											</span>
+										)}
+										{item.stage && (
+											<span class="block max-w-full px-1 text-xs font-normal leading-snug text-black/70">
+												{item.stage}
+											</span>
+										)}
 									</a>
 								</li>
 							))
