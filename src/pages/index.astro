@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-/** Row in Now / Previously / Contact: title, URL line, optional explainer, optional stage line (shown under explainer). */
+/** Row in Now / Previously / Contact: title, URL line, optional explainer; optional `stage` (Now / Previously only in the template). */
 interface SiteLink {
 	href: string;
 	label: string;
@@ -65,16 +65,14 @@ const previousLinks: SiteLink[] = [
 const contactLinks: SiteLink[] = [
 	{
 		href: "mailto:tambuildsthings@gmail.com?subject=wownicesitebro",
-		label: "Email",
-		stage: "Best for longer messages",
+		label: "Email"
 	},
 	{
 		href: "https://www.linkedin.com/in/tam-finlay/",
-		label: "LinkedIn",
-		stage: "Professional profile",
+		label: "LinkedIn"
 	},
-	{ href: "https://x.com/tambuildsthings", label: "Twitter", stage: "Short updates" },
-	{ href: "https://github.com/tambuildsthings", label: "GitHub", stage: "Code and projects" },
+	{ href: "https://x.com/tambuildsthings", label: "Twitter" },
+	{ href: "https://github.com/tambuildsthings", label: "GitHub" },
 ];
 
 /** Motion, border, shadow, focus — hover fill added per variant. */
@@ -288,21 +286,11 @@ const linkButtonContact = `${linkButtonCream} !flex w-full min-h-[3.25rem] items
 								<li class="min-w-0">
 									<a
 										href={item.href}
-										class={`${linkButtonContact} flex-col gap-1 py-3`}
+										class={linkButtonContact}
 										target="_blank"
 										rel="noopener noreferrer"
 									>
 										{item.label}
-										{item.explainer && (
-											<span class="block max-w-full px-1 text-xs font-normal leading-snug text-black/70">
-												{item.explainer}
-											</span>
-										)}
-										{item.stage && (
-											<span class="block max-w-full px-1 text-xs font-normal leading-snug text-black/70">
-												{item.stage}
-											</span>
-										)}
 									</a>
 								</li>
 							))
