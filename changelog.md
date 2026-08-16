@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-16
+
+- **19:54 UTC+2** — Swapped the page canvas from neon magenta `#ff10f0` to Bubblegum `#ff85cc` (body background and matching text-selection colour). Cream, lime, white, black, and layout unchanged.
+- **19:51 UTC+2** — Added three HTML background mock-ups in `mockups/` (Bubblegum `#ff85cc`, Warm rose `#ff5c92`, Soft magenta `#de72d7`). Layout and other colours match the live site; only the page canvas changes. Review files only — site not updated yet.
+
 ## 2026-05-23
 
 - **Homepage intro** — Refreshed the header about copy: listed product types instead of solo/team wording; “other humans” → “other people”; “driver” → “robot driver” in the AI enablement line.
