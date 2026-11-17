@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Fast checks when an orb wakes. Netlify CLI reads NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID
+# from the environment, so no login step is needed here.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+[ -d node_modules/astro ] || echo "warning: node_modules missing; run .agents/setup" >&2
+
+for var in NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID; do
+  [ -n "${!var:-}" ] || echo "note: $var is not set; 'netlify deploy' will not work in this orb" >&2
+done
+exit 0

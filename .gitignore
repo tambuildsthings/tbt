@@ -24,3 +24,5 @@ pnpm-debug.log*
 .idea/
 
 mockups/
+# amp orb portals
+.amp/portals/*

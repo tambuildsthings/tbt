@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Prepares a fresh Amp orb: Node deps for the Astro site and the Netlify CLI for deploys.
+# Runs non-interactively and is safe to rerun on a warm snapshot.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+step() { echo "==> $*"; SECONDS=0; }
+done_step() { echo "    done in ${SECONDS}s"; }
+
+step "Checking Node (package.json requires >=22.12)"
+node -e 'const [a,b]=process.versions.node.split(".").map(Number); if (a<22||(a===22&&b<12)) { console.error("Node "+process.version+" is too old"); process.exit(1) }'
+node -v
+done_step
+
+step "Installing npm dependencies"
+# npm ci wipes node_modules every time. npm writes node_modules/.package-lock.json after an install,
+# so skip ci when that is newer than the lockfile.
+if [ node_modules/.package-lock.json -nt package-lock.json ]; then
+  echo "    node_modules is up to date with package-lock.json"
+else
+  npm ci --no-audit --no-fund
+fi
+done_step
+
+step "Installing Netlify CLI"
+if command -v netlify >/dev/null 2>&1; then
+  echo "    $(netlify --version)"
+else
+  npm install -g --no-audit --no-fund netlify-cli
+fi
+done_step
+
+step "Generating Astro types"
+npx astro sync
+done_step
